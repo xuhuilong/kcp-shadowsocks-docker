@@ -48,7 +48,7 @@ or running as a service
 
 
 compose 
-
+```
 ss:
   image: imhang/kcp-shadowsocks-docker:latest
   net: "host"
@@ -67,3 +67,4 @@ ss:
     - SS_TIMEOUT=600
     - SNDWND=1024
     - MTU=1400
+```
