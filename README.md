@@ -45,3 +45,25 @@ or running as a service
     DATASHARD   10
 
     PARITYSHARD 0
+
+
+compose 
+
+ss:
+  image: imhang/kcp-shadowsocks-docker:latest
+  net: "host"
+  restart: always
+  environment:
+    - SS_PORT=443
+    - KCP_CRYPT=xor
+    - KCP_PORT=9443
+    - SS_METHOD=chacha20
+    - KCP_MODE=fast
+    - PARITYSHARD=0
+    - DATASHARD=10
+    - RCVWND=1024
+    - SS_PASSWORD=123@root
+    - KCP_KEY=123456
+    - SS_TIMEOUT=600
+    - SNDWND=1024
+    - MTU=1400
